@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODAL PROJECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button type="button" class="button center js-open"> Open Modal </button>
+
+    <div id="modal-background"></div>
+    <div id="modal-box">
+        <h1>MODAL BOX</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit velit vitae purus euismod
+            facilisis.
+            Maecenas egestas vestibulum lacus nec tempus. Vivamus eu pulvinar urna.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit velit vitae purus euismod
+            facilisis.
+            Maecenas egestas vestibulum lacus nec tempus. Vivamus eu pulvinar urna.
+        </p>
+        <div class="text-align">
+            <button type="button" class="button button--close js-close"> Close </button>
+            <button type="button" class="button button--accept js-close"> Accept </button>
+        </div>
+    </div>
+
+<script>
+
+const openBtn = document.querySelector(".js-open")
+const modalBg = document.getElementById("modal-background")
+const modalBox = document.getElementById("modal-box")
+openBtn.addEventListener('click', function(event){
+    event.preventDefault()
+    console.log("HELLO This is a CLICK")
+    modalBg.classList.add("active")
+    modalBox.classList.add("active")
+})
+
+const closeBtn = document.querySelectorAll(".js-close")
+closeBtn.forEach(node =>{
+    console.log("node", node)
+    node.addEventListener('click', function(e){
+        event.preventDefault()
+        modalBg.classList.remove("active")
+        modalBox.classList.remove("active")
+
+    })
+})
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
